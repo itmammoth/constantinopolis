@@ -1,0 +1,10 @@
+defaults: &defaults
+  common: Common value
+
+development:
+  <<: *defaults
+  hello: "Hello, development!"
+
+test:
+  <<: *defaults
+  hello: "Hello, test!"

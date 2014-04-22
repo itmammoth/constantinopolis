@@ -1,0 +1,5 @@
+hello: Hello, <%= "constantinopolis!".upcase %>
+number: 10
+go:
+  to:
+    hospital: "Go to hospital."
