@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Constantinopolis::VERSION
   spec.authors       = ["itmammoth"]
   spec.email         = ["itmammoth@gmail.com"]
-  spec.summary       = %q{A simple setting constants solution for ruby applications.}
-  spec.description   = %q{Constantinopolis allows you to set constants from your ERBed YAML file. Remarkably, your constants are available not only in ruby context, but in javascript's. It works with Rails, Sinatra, or any Ruby project.}
+  spec.summary       = %q{Setting constants solution for ruby applications.}
+  spec.description   = %q{Constantinopolis allows you to set constants from your ERBed YAML file. Remarkably, your constants are available not only in ruby context, but in javascript's. It works with Rails, Sinatra, or any Ruby projects.}
   spec.homepage      = "https://github.com/itmammoth/constantinopolis"
   spec.license       = "MIT"
 
