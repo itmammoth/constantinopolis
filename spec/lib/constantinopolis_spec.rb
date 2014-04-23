@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'constantinopolis'
 
 describe Constantinopolis::Fort do
 
@@ -7,12 +6,12 @@ describe Constantinopolis::Fort do
   end
 
   class WithYaml < Constantinopolis::Fort
-    yml "spec/setting.yml"
+    yml File.expand_path('../setting.yml', __FILE__)
   end
   WithYaml.build!
 
   class WithNamespace < Constantinopolis::Fort
-    yml "spec/setting_with_namespace.yml"
+    yml File.expand_path('../setting_with_namespace.yml', __FILE__)
     namespace :test
   end
   WithNamespace.build!
@@ -36,5 +35,13 @@ describe Constantinopolis::Fort do
       it { expect(WithNamespace.common).to eq "Common value" }
       it { expect(WithNamespace.hello).to eq "Hello, test!" }
     end
+  end
+
+  describe "::js_code" do
+    subject(:js_code) { WithYaml.js_code }
+    it { expect(js_code).to match /WithYaml={.*};/m }
+    it { expect(js_code).to match /"hello":"Hello, CONSTANTINOPOLIS!"/m }
+    it { expect(js_code).to match /"number":10/m }
+    it { expect(js_code).to match /"go":{"to":{"hospital":"Go to hospital."}}/m }
   end
 end

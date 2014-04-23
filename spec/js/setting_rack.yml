@@ -1,0 +1,5 @@
+greeting: Hello, world!
+number: 20
+deadline:
+  projects:
+    a: <%= Date.new(2014, 4, 23) %>

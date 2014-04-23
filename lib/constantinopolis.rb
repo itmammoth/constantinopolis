@@ -1,6 +1,7 @@
 require "constantinopolis/version"
 require "yaml"
 require "erb"
+require "json"
 
 module Constantinopolis
 
@@ -19,6 +20,11 @@ module Constantinopolis
 
       def build!
         instance.build_methods!
+        instance.build_js!
+      end
+
+      def js_code
+        instance.js_code
       end
 
       private
@@ -36,6 +42,14 @@ module Constantinopolis
           sig.send :define_method, key, ->() { value }
         end
       end
+    end
+
+    def build_js!
+      @js_code = "#{self.class.name}=#{JSON.generate(@constants)};"
+    end
+
+    def js_code
+      @js_code
     end
 
     private

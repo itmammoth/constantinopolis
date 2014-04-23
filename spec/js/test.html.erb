@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title>spec</title>
+  <script type="text/javascript"><%= SettingRack.js_code %></script>
+</head>
+<body>
+  <h1 id="page-title">Fort of javascript</h1>
+  <p id="greeting"></p>
+  <p id="number"></p>
+  <p id="deadline-projects-a"></p>
+  <script type="text/javascript">
+    document.getElementById("greeting").innerText = SettingRack.greeting;
+    document.getElementById("number").innerText = SettingRack.number;
+    document.getElementById("deadline-projects-a").innerText = SettingRack.deadline.projects.a;
+  </script>
+</body>
+</html>
