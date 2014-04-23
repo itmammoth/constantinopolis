@@ -3,6 +3,7 @@
 Constantinopolis allows you to set constants from your ERBed YAML file.
 Remarkably, your constants are available not only in ruby context, but in javascript's.
 It works with Rails, Sinatra, or any Ruby projects.
+It's inspired by [settingslogic](https://github.com/binarylogic/settingslogic).
 
 ## Installation
 
