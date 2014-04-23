@@ -106,7 +106,7 @@ Constantinopolis provides you a simple helper method to define javascript's cons
 <% end %>
 ```
 
-It's can be a nice to define ```<%= javascript_tag Istanbul.js_code %>``` in ```layouts/application.html.erb```.
+It's can be a nice to define ```<%= javascript_tag Istanbul.js_code %>``` in ```layouts/application.html.erb``` if you are developing a rails application.
 
 ## Contributing
 
