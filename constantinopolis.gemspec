@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Constantinopolis::VERSION
   spec.authors       = ["itmammoth"]
   spec.email         = ["itmammoth@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{A simple setting constants solution for ruby applications.}
+  spec.description   = %q{Constantinopolis allows you to set constants from your ERBed YAML file. Remarkably, your constants are available not only in ruby context, but in javascript's. It works with Rails, Sinatra, or any Ruby project.}
+  spec.homepage      = "https://github.com/itmammoth/constantinopolis"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -18,10 +18,10 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "rspec"
-  spec.add_development_dependency "pry-byebug"
-  spec.add_development_dependency "capybara"
-  spec.add_development_dependency "launchy"
-  spec.add_development_dependency "poltergeist"
-  spec.add_development_dependency "sinatra"
+  spec.add_development_dependency "rspec", "~> 2.14"
+  spec.add_development_dependency "pry-byebug", "~> 1.3"
+  spec.add_development_dependency "capybara", "~> 2.2"
+  spec.add_development_dependency "launchy", "~> 2.4"
+  spec.add_development_dependency "poltergeist", "~> 1.5"
+  spec.add_development_dependency "sinatra", "~> 1.4"
 end
