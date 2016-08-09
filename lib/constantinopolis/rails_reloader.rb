@@ -9,7 +9,7 @@ module Constantinopolis
         end
         Rails.application.reloaders << reloader
 
-        ActiveSupport::Reloader.to_prepare do
+        active_reloader.to_prepare do
           reloader.execute_if_updated
         end
       end
@@ -19,6 +19,14 @@ module Constantinopolis
       case Rails.version[0]
       when '4' then ActiveSupport::FileUpdateChecker
       when '5' then Rails.application.config.file_watcher || ActiveSupport::FileUpdateChecker
+      else raise 'Unsupported rails version!'
+      end
+    end
+
+    def active_reloader
+      case Rails.version[0]
+      when '4' then ActionDispatch::Reloader
+      when '5' then ActiveSupport::Reloader
       else raise 'Unsupported rails version!'
       end
     end
