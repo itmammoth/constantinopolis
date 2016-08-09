@@ -1,17 +1,19 @@
 require "constantinopolis/version"
+require "constantinopolis/rails_reloader"
 require "yaml"
 require "erb"
 require "json"
 
 module Constantinopolis
-
   class Fort
     private_class_method :new
 
     class << self
 
       def yml(path = nil)
-        @yml ||= path
+        return @yml unless path
+        Constantinopolis::RailsReloader.register(self, path) if defined? Rails
+        @yml = path
       end
 
       def namespace(namespace = nil)
@@ -21,6 +23,11 @@ module Constantinopolis
       def build!
         instance.build_methods!
         instance.build_js!
+      end
+
+      def reload!
+        @instance = nil
+        build!
       end
 
       def js_code
@@ -35,12 +42,11 @@ module Constantinopolis
       end
     end
 
+    # --- Instance methods
+
     def build_methods!
       @constants.each do |key, value|
-        self.class.module_eval do
-          sig = class << self; self; end
-          sig.send :define_method, key, ->() { value }
-        end
+        self.class.define_singleton_method key, ->() { value }
       end
     end
 

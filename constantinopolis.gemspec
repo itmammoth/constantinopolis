@@ -18,10 +18,10 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "rspec", "~> 2.14"
-  spec.add_development_dependency "pry-byebug", "~> 1.3"
-  spec.add_development_dependency "capybara", "~> 2.2"
+  spec.add_development_dependency "rspec", "~> 3.4"
+  spec.add_development_dependency "pry-byebug", "~> 3.4"
+  spec.add_development_dependency "capybara", "~> 2.7"
   spec.add_development_dependency "launchy", "~> 2.4"
-  spec.add_development_dependency "poltergeist", "~> 1.5"
+  spec.add_development_dependency "poltergeist", "~> 1.10"
   spec.add_development_dependency "sinatra", "~> 1.4"
 end

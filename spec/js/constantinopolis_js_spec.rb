@@ -7,7 +7,7 @@ require 'sinatra'
 
 Capybara.default_driver = :poltergeist
 Capybara.javascript_driver = :poltergeist
-Capybara.save_and_open_page_path = File.dirname(__FILE__) + '/../tmp'
+Capybara.save_path = File.dirname(__FILE__) + '/../tmp'
 
 class SettingRack < Constantinopolis::Fort
   yml File.expand_path('../setting_rack.yml', __FILE__)
@@ -28,9 +28,9 @@ describe 'the dummy app', js: true do
 
   it "renders javascript objects" do
     visit "/"
-    page.should have_content "Fort of javascript"
-    page.should have_content "Hello, world!"
-    page.should have_content "20"
-    page.should have_content "2014-04-23"
+    expect(page).to have_content "Fort of javascript"
+    expect(page).to have_content "Hello, world!"
+    expect(page).to have_content "20"
+    expect(page).to have_content "2014-04-23"
   end
 end
