@@ -37,10 +37,7 @@ module Constantinopolis
 
     def build_methods!
       @constants.each do |key, value|
-        self.class.module_eval do
-          sig = class << self; self; end
-          sig.send :define_method, key, ->() { value }
-        end
+        self.class.define_singleton_method key, ->() { value }
       end
     end
 
