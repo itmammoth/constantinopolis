@@ -26,14 +26,30 @@ Or install it yourself as:
 You need to create a class in your application like below.
 
 ```ruby
-class Istanbul < Constantinopolis::Fort
+class Istanbul < Constantinopolis::Fort # Any class name you like
   yml "#{Rails.root}/config/istanbul.yml"  # Indicate your yaml file path.
   namespace Rails.env  # Indicate top level namespace (If you want).
 end
 Istanbul.build!  # Don't forget this line!
 ```
 
-If you are setting for rails application, you'd better to create this file in ```config/initializer```.
+If you are setting for a rails application, it's better to put this file in ```config/initializer```
+
+### Reload
+If Constantinopolis is used on rails `development` environment, it'll automatically be reloaded when its yaml file is updated.
+
+To manually reload, just invoke the method `reload!`.
+
+```ruby
+ex)
+class Istanbul < Constantinopolis::Fort
+  ...
+end
+...
+
+# Anywhere you want to reload it
+Istanbul.reload!
+```
 
 ### Define constants
 
