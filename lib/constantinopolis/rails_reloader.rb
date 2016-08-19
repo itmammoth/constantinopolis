@@ -3,7 +3,7 @@ module Constantinopolis
     extend self
 
     def register(klass, yml)
-      if Rails.env.development?
+      unless Rails.env.production?
         reloader = file_update_checker.new([yml]) do
           klass.reload!
         end
