@@ -20,6 +20,7 @@ module Constantinopolis
       when '4' then ActiveSupport::FileUpdateChecker
       when '5' then Rails.application.config.file_watcher || ActiveSupport::FileUpdateChecker
       when '6' then Rails.application.config.file_watcher || ActiveSupport::FileUpdateChecker
+      when '7' then Rails.application.config.file_watcher || ActiveSupport::FileUpdateChecker
       else raise 'Unsupported rails version!'
       end
     end
@@ -29,6 +30,7 @@ module Constantinopolis
       when '4' then ActionDispatch::Reloader
       when '5' then ActiveSupport::Reloader
       when '6' then ActiveSupport::Reloader
+      when '7' then ActiveSupport::Reloader
       else raise 'Unsupported rails version!'
       end
     end
