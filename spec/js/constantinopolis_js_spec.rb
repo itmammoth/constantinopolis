@@ -2,11 +2,11 @@ require 'spec_helper'
 
 require 'capybara'
 require 'capybara/rspec'
-require 'capybara/poltergeist'
+require 'selenium-webdriver'
 require 'sinatra'
 
-Capybara.default_driver = :poltergeist
-Capybara.javascript_driver = :poltergeist
+Capybara.default_driver = :selenium_chrome
+Capybara.javascript_driver = :selenium_chrome
 Capybara.save_path = File.dirname(__FILE__) + '/../tmp'
 
 class SettingRack < Constantinopolis::Fort
