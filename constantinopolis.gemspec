@@ -20,9 +20,9 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "rspec", "~> 3.4"
   spec.add_development_dependency "pry-byebug", "~> 3.4"
-  spec.add_development_dependency "capybara", "~> 2.7"
+  spec.add_development_dependency "capybara", "~> 3.37"
   spec.add_development_dependency "launchy", "~> 2.4"
   spec.add_development_dependency "selenium-webdriver", "~> 4.5"  # Needs chromedriver
-  spec.add_development_dependency "sinatra", "~> 1.4"
-  spec.add_development_dependency "webrick", "~> 1.7"
+  spec.add_development_dependency "sinatra", "~> 3.0"
+  spec.add_development_dependency "puma", "~> 5.6"
 end
