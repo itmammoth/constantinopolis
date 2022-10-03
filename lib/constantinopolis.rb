@@ -63,7 +63,7 @@ module Constantinopolis
     def initialize
       raise "Must locate yaml file!" unless self.class.yml
       file = open(self.class.yml).read
-      hash = set_accessor(YAML.load(ERB.new(file).result))
+      hash = set_accessor(YAML.unsafe_load(ERB.new(file).result))
       @constants = self.class.namespace ? hash[self.class.namespace.to_s] : hash
     end
 
